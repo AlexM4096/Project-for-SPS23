@@ -7,9 +7,9 @@ public class GameTime : MonoBehaviour
     public float currentTime = 0;
     public float multiplyTime = 1;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        currentTime += Time.deltaTime * multiplyTime;
+        currentTime += Time.fixedDeltaTime * multiplyTime;
     }
 
     public void TimePause()

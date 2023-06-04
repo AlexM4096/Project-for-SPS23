@@ -1,1 +1,54 @@
-{}
+{
+    "name": "ControlAction",
+    "maps": [
+        {
+            "name": "Pointer",
+            "id": "c951b3b9-f32b-415b-9821-0d455b470488",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "b8d76186-b4c1-4d80-9057-6a410e2d69cc",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "a822bd40-43c3-4f2b-b5ad-622a4ce96458",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2810bc84-4d0f-4359-9f7d-cb69395d8871",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "878a1b73-3f58-4049-b5a9-454cbae18293",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -22,9 +22,62 @@ public partial class @ControlAction: IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""ControlAction"",
-    ""maps"": [],
+    ""maps"": [
+        {
+            ""name"": ""Pointer"",
+            ""id"": ""c951b3b9-f32b-415b-9821-0d455b470488"",
+            ""actions"": [
+                {
+                    ""name"": ""Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""b8d76186-b4c1-4d80-9057-6a410e2d69cc"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""a822bd40-43c3-4f2b-b5ad-622a4ce96458"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2810bc84-4d0f-4359-9f7d-cb69395d8871"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""878a1b73-3f58-4049-b5a9-454cbae18293"",
+                    ""path"": ""<Pointer>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        }
+    ],
     ""controlSchemes"": []
 }");
+        // Pointer
+        m_Pointer = asset.FindActionMap("Pointer", throwIfNotFound: true);
+        m_Pointer_Position = m_Pointer.FindAction("Position", throwIfNotFound: true);
+        m_Pointer_Click = m_Pointer.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -81,5 +134,64 @@ public partial class @ControlAction: IInputActionCollection2, IDisposable
     public int FindBinding(InputBinding bindingMask, out InputAction action)
     {
         return asset.FindBinding(bindingMask, out action);
+    }
+
+    // Pointer
+    private readonly InputActionMap m_Pointer;
+    private List<IPointerActions> m_PointerActionsCallbackInterfaces = new List<IPointerActions>();
+    private readonly InputAction m_Pointer_Position;
+    private readonly InputAction m_Pointer_Click;
+    public struct PointerActions
+    {
+        private @ControlAction m_Wrapper;
+        public PointerActions(@ControlAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Position => m_Wrapper.m_Pointer_Position;
+        public InputAction @Click => m_Wrapper.m_Pointer_Click;
+        public InputActionMap Get() { return m_Wrapper.m_Pointer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PointerActions set) { return set.Get(); }
+        public void AddCallbacks(IPointerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PointerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PointerActionsCallbackInterfaces.Add(instance);
+            @Position.started += instance.OnPosition;
+            @Position.performed += instance.OnPosition;
+            @Position.canceled += instance.OnPosition;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+        }
+
+        private void UnregisterCallbacks(IPointerActions instance)
+        {
+            @Position.started -= instance.OnPosition;
+            @Position.performed -= instance.OnPosition;
+            @Position.canceled -= instance.OnPosition;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+        }
+
+        public void RemoveCallbacks(IPointerActions instance)
+        {
+            if (m_Wrapper.m_PointerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPointerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PointerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PointerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PointerActions @Pointer => new PointerActions(this);
+    public interface IPointerActions
+    {
+        void OnPosition(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }
