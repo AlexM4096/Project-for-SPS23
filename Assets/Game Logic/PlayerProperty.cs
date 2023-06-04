@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class PlayerProperty
 {
-    private static int maxPropertyValue = 12;
+    private static int maxPropertyValue = 12; //ћаксимальное значение характеристик
 
     private static byte _intelligence;
     private static byte _mentality;
