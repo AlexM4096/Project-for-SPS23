@@ -2,28 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameTime : MonoBehaviour
+public static class GameTime
 {
-    public float currentTime = 0;
-    public float multiplyTime = 1;
+    public static float currentTime = 0; //В днях
+    public static float multiplyTime = 1;
 
-    private void FixedUpdate()
+    public static void FixedUpdate()
     {
         currentTime += Time.fixedDeltaTime * multiplyTime;
     }
 
-    public void TimePause()
+    public static void TimePause()
     {
         multiplyTime = 0;
     }
 
-    public void TimeBoost(float value)
+    public static void TimeBoost(float value)
     {
         multiplyTime = value;
     }
 
-    public void TimeNormalize()
+    public static void TimeNormalize()
     {
         multiplyTime = 1;
+    }
+
+    public static int GetInt()
+    {
+        return Mathf.RoundToInt(currentTime);
     }
 }
