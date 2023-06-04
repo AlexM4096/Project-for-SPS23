@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Buff", menuName = "GameFiles/Buff", order = 1)]
 public class Buff : ScriptableObject
 {
-    public string buffName;
-    public string buffDescription;
+    public string title;
+    public string description;
 
     [Header("Player Property")] 
     public byte intelligence;
