@@ -13,6 +13,12 @@ public class GameEvent : ScriptableObject
 [System.Serializable]
 public class GameEventChoice
 {
+    //ƒл€ проверки навыков. 0 - значит, что навык не провер€етс€
+    public int intelligence = 0;
+    public int mentality = 0;
+    public int physique = 0;
+    public int finance = 0;
+
     public string title;
     public GameEventBuffs[] buffs;
 }
