@@ -4,7 +4,8 @@ using UnityEngine.UIElements;
 
 public class Main : MonoBehaviour
 {
-    [SerializeField] VisualTreeAsset Building;
+    public BuildingData[] Buildings;
+
     VisualElement Root;
 
     Dictionary<string, TextElement> Stats;
@@ -40,6 +41,16 @@ public class Main : MonoBehaviour
         Root.Q<Button>("BW").clicked += Switch;
 
         Days = Root.Q<Label>("Days");
+
+        VisualElement t = Root.Q("Buildings");
+        foreach (var a in Buildings)
+        {
+            Button b = new();
+            b.AddToClassList("button");
+            b.text = a.Name;
+            b.clicked += () => GridManager.Instance.Data = a;
+            t.Add(b);
+        }
     }
 
     private void Update()
@@ -61,6 +72,10 @@ public class Main : MonoBehaviour
         if (BWIsVisible)
             BW.style.display = DisplayStyle.Flex;
         else
+        {
             BW.style.display = DisplayStyle.None;
+            GridManager.Instance.Data = null;
+        }
+            
     }
 }

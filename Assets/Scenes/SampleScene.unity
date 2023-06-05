@@ -819,13 +819,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1049231995}
   - component: {fileID: 1049231996}
+  - component: {fileID: 1049231997}
   m_Layer: 0
   m_Name: Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1049231995
 Transform:
   m_ObjectHideFlags: 0
@@ -857,6 +858,19 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 5b1abfdefbb83a84ba1fde8ecf512a19, type: 3}
   m_SortingOrder: 3
+--- !u!114 &1049231997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049231994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2288ecbdc475c6949abebce216cb8e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChoiceBlank: {fileID: 9197481963319205126, guid: a9422f811695ad84fb529c41c38fc8fc, type: 3}
 --- !u!1 &1482159182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5826285427b334191620dbff6d858a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Building: {fileID: 0}
+  Buildings:
+  - {fileID: 11400000, guid: 929e9303d12630241940a4c4c6d923bf, type: 2}
+  - {fileID: 11400000, guid: 8c8e446f6e6c78b499a7f45da52697bc, type: 2}
+  - {fileID: 11400000, guid: 133fe892d5f2bdb45bda667d1c1220a4, type: 2}
+  - {fileID: 11400000, guid: f237edf0a0d587944965a74399e8261b, type: 2}
 --- !u!1 &2124603063
 GameObject:
   m_ObjectHideFlags: 0

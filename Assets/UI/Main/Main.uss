@@ -32,3 +32,10 @@
 .unity-button:hover {
     -unity-background-image-tint-color: rgb(128, 128, 128);
 }
+
+.button {
+    width: 256px;
+    height: 128px;
+    background-image: url('project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1817352102&guid=4ae5eec28802e9049a44995baa330718&type=3#TILESHEET (1)_24');
+    margin-top: 32px;
+}

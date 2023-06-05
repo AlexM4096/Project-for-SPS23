@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="Root" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); padding-left: 64px; padding-right: 64px; padding-top: 64px; padding-bottom: 64px; display: none;">
+    <ui:VisualElement name="Root" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); padding-left: 64px; padding-right: 64px; padding-top: 64px; padding-bottom: 64px;">
         <ui:VisualElement name="BackGround" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-wrap: wrap;">
             <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=373676062&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_31&apos;);" />
             <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); width: 1536px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=862802676&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_35&apos;);" />
@@ -11,6 +11,6 @@
             <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); width: 1536px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1308261811&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_36&apos;);" />
             <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1612871621&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_33&apos;);" />
         </ui:VisualElement>
-        <ui:VisualElement name="Choices" style="flex-grow: 1; background-color: rgb(107, 0, 239); position: absolute; margin-left: 64px; margin-right: 64px; margin-top: 64px; margin-bottom: 64px; height: 824px; width: 1664px; align-items: center; justify-content: center;" />
+        <ui:VisualElement name="Choices" style="flex-grow: 1; background-color: rgb(107, 0, 239); position: absolute; margin-left: 64px; margin-right: 64px; margin-top: 64px; margin-bottom: 64px; height: 824px; width: 1664px; align-items: center; justify-content: center; flex-direction: row;" />
     </ui:VisualElement>
 </ui:UXML>

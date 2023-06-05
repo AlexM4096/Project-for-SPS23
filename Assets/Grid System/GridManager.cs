@@ -20,7 +20,7 @@ public class GridManager : MonoBehaviour
     Vector3Int SelectedTilePos;
 
     public bool InBuildingMode;
-    [SerializeField] private BuildingData Data;
+    public BuildingData Data;
 
     Dictionary<Vector3Int, BuildingData> PlacedTiles;
 

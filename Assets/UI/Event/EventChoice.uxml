@@ -1,3 +1,21 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="width: 330px; height: 440px; background-color: rgb(0, 0, 0);" />
+    <Style src="project://database/Assets/EventChoice.uss?fileID=7433441132597879392&amp;guid=ea06d8dcf4a656f4c86f1046e07ff8f7&amp;type=3#EventChoice" />
+    <ui:VisualElement name="VisualElement" style="width: 480px; height: 640px; margin-left: 64px; margin-right: 64px; margin-top: 0; margin-bottom: 0;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;">
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=373676062&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_31&apos;);" />
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); width: 224px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=862802676&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_35&apos;);" />
+            <ui:VisualElement name="VisualElement" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-904683546&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_32&apos;);" />
+            <ui:VisualElement name="VisualElement" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 384px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-517545082&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_38&apos;);" />
+            <ui:VisualElement name="VisualElement" style="width: 224px; height: 384px;" />
+            <ui:VisualElement name="VisualElement" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 384px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=77646027&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_37&apos;);" />
+            <ui:VisualElement name="VisualElement" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-1048519257&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_34&apos;);" />
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); width: 224px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1308261811&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_36&apos;);" />
+            <ui:VisualElement name="VisualElement" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1612871621&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_33&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualElement" style="background-color: rgb(107, 0, 239); position: absolute; width: 416px; height: 576px; margin-left: 32px; margin-right: 32px; margin-top: 32px; margin-bottom: 32px; padding-left: 16px; padding-right: 16px; padding-top: 16px; padding-bottom: 16px; align-items: center;">
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Titile" style="height: 200px; width: 100%;" />
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Description" style="height: 256px; width: 100%;" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>
