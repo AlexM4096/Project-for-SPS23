@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentManager = this;
-        GameTime.currentTime = 0;
+        GameTime.Start();
         GameEventsManager.LoadEvents();
         GameEventsManager.StartTimeEvents();
     }
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void GameEventsUpdate()
     {
-        int currentTime = GameTime.GetInt();
+        int currentTime = GameTime.currentTime;
 
         if (currentTime > lastFrameTime) GameEventsManager.CheckEvents();
 

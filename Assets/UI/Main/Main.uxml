@@ -1,0 +1,49 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Main/Main.uss?fileID=7433441132597879392&amp;guid=aaedb2dc520805c40bcc1bdd817f87ba&amp;type=3#Main" />
+    <ui:VisualElement name="Root" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); margin-left: 16px; margin-right: 16px; margin-top: 16px; margin-bottom: 16px;">
+        <ui:VisualElement name="Stats" style="background-color: rgba(0, 0, 0, 0); width: 864px; height: 128px; flex-direction: row; position: absolute; bottom: 0; left: 0;">
+            <ui:VisualElement name="PhysicalHealth" class="stat" style="background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-595843002&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_15&apos;);">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Value" style="width: 100%; height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="MentalHealth" class="stat" style="background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-1729344326&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_14&apos;);">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Value" style="width: 100%; height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Intelligence" class="stat" style="background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=713732356&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_19&apos;);">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Value" style="width: 100%; height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Socialization" class="stat" style="background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=655503861&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_18&apos;);">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Value" style="width: 100%; height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Creativity" class="stat" style="background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=139752520&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_20&apos;);">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Value" style="width: 100%; height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Finance" class="stat" style="background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1045742262&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_16&apos;);">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Value" style="width: 100%; height: 100%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="BuildingWindow" style="background-color: rgba(0, 0, 0, 0); width: 512px; height: 896px; position: absolute; right: 0;">
+            <ui:VisualElement name="Hide" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); display: none;">
+                <ui:VisualElement name="BackGround" style="background-color: rgba(0, 0, 0, 0); width: 512px; height: 896px; flex-direction: row; flex-wrap: wrap;">
+                    <ui:VisualElement name="trc" class="c trc" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=373676062&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_31&apos;);" />
+                    <ui:VisualElement name="t" class="nc t" style="width: 256px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=862802676&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_35&apos;);" />
+                    <ui:VisualElement name="rlc" class="c tlc" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-904683546&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_32&apos;);" />
+                    <ui:VisualElement name="l" class="c tlc" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 640px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-517545082&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_38&apos;);" />
+                    <ui:VisualElement name="c" class="c tlc" style="width: 256px; height: 640px;" />
+                    <ui:VisualElement name="r" class="c tlc" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 640px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=77646027&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_37&apos;);" />
+                    <ui:VisualElement name="blc" class="c trc" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-1048519257&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_34&apos;);" />
+                    <ui:VisualElement name="b" class="nc t" style="width: 256px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1308261811&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_36&apos;);" />
+                    <ui:VisualElement name="brc" class="c tlc" style="background-color: rgba(0, 0, 0, 0); width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1612871621&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_33&apos;);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Buildings" style="background-color: rgb(107, 0, 239); margin-left: 32px; margin-right: 32px; margin-top: 32px; margin-bottom: 32px; position: absolute; width: 448px; height: 832px;" />
+            </ui:VisualElement>
+            <ui:Button name="BW" style="position: absolute; right: 0; margin-top: 32px; margin-right: 32px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1028565683&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_22&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Buttons" style="background-color: rgba(0, 0, 0, 0); position: absolute; bottom: 0; right: 0; width: 848px; height: 128px; flex-direction: row;">
+            <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Days" enable-rich-text="false" style="width: 256px; height: 128px; margin-left: 8px; margin-right: 8px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1817352102&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_24&apos;);" />
+            <ui:Button display-tooltip-when-elided="true" name="Pause" style="margin-right: 8px; margin-left: 8px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=38996074&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_27&apos;);" />
+            <ui:Button display-tooltip-when-elided="true" name="x1" style="margin-right: 8px; margin-left: 8px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=1781147299&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_28&apos;);" />
+            <ui:Button display-tooltip-when-elided="true" name="x2" style="margin-right: 8px; margin-left: 8px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=-467867284&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_29&apos;);" />
+            <ui:Button display-tooltip-when-elided="true" name="x4" style="margin-right: 8px; margin-left: 8px; background-image: url(&apos;project://database/Assets/Sprites/TILESHEET%20(1).png?fileID=427016659&amp;guid=4ae5eec28802e9049a44995baa330718&amp;type=3#TILESHEET (1)_30&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

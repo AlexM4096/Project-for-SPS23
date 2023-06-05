@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ControlManager : MonoBehaviour
 {
@@ -20,19 +19,13 @@ public class ControlManager : MonoBehaviour
         Instance = this;
 
         MainCamera = Camera.main;
-        InputActions = new();       
+        InputActions = new();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         InputActions.Enable();
-        InputActions.Pointer.Click.started += _ => OnPointerClick?.Invoke(); 
-    }
-
-    private void OnDisable()
-    {
-        InputActions.Disable();
-        InputActions.Pointer.Click.started -= _ => OnPointerClick?.Invoke();
+        InputActions.Pointer.Click.started += _ => OnPointerClick?.Invoke();
     }
 
     private void Update()

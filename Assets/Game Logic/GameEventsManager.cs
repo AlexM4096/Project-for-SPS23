@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
@@ -21,19 +21,19 @@ public static class GameEventsManager
 
     public static void CheckEvents()
     {
-        int cTime = GameTime.GetInt();
+        int cTime = GameTime.currentTime;
 
-        //Проверка обязательных событий
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         for (int i = 0; i < events.Count; i++)
         {
-            if(cTime == events[i].range.x && !events[i].randomEvent)
+            if (cTime == events[i].range.x && !events[i].randomEvent)
             {
                 StartEvent(events[i]);
                 events.Remove(events[i]);
             }
         }
 
-        //Проверка необязательных событий
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (cTime == timeEvents)
         {
             List<GameEvent> currentEvents = new List<GameEvent>();
@@ -46,7 +46,7 @@ public static class GameEventsManager
                 }
             }
 
-            if(currentEvents.Count != 0) StartEvent(currentEvents[UnityEngine.Random.Range(0, currentEvents.Count)]);
+            if (currentEvents.Count != 0) StartEvent(currentEvents[UnityEngine.Random.Range(0, currentEvents.Count)]);
 
             int2 eventsRange = GameManager.currentManager.eventsRange;
             timeEvents += UnityEngine.Random.Range(eventsRange.x, eventsRange.y + 1);
@@ -56,6 +56,6 @@ public static class GameEventsManager
     private static void StartEvent(GameEvent _event)
     {
         GameTime.TimePause();
-        //Передать событие в UI систему
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ UI пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 }

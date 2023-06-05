@@ -1,15 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class GameTime
 {
-    public static float currentTime = 0; //В днях
-    public static float multiplyTime = 1;
+    public static int currentTime = 0; //В днях
+    public static int multiplyTime = 1;
+
+    public static int DaysPerSecond = 1;
+
+    static float Delta = 0;
+
+    public static void Start()
+    {
+        currentTime = 0;
+    }
 
     public static void FixedUpdate()
     {
-        currentTime += Time.fixedDeltaTime * multiplyTime;
+        Delta += Time.fixedDeltaTime * multiplyTime * DaysPerSecond;
+
+        if (Delta > 1)
+        {
+            currentTime += Mathf.FloorToInt(Delta);
+            Delta--;
+            //Debug.Log(currentTime);
+        }
     }
 
     public static void TimePause()
@@ -17,18 +32,10 @@ public static class GameTime
         multiplyTime = 0;
     }
 
-    public static void TimeBoost(float value)
+    public static void TimeBoost(int value)
     {
         multiplyTime = value;
     }
 
-    public static void TimeNormalize()
-    {
-        multiplyTime = 1;
-    }
-
-    public static int GetInt()
-    {
-        return Mathf.RoundToInt(currentTime);
-    }
+    public static int GetYears => currentTime / 365;
 }

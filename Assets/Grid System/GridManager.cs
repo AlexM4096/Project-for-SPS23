@@ -1,17 +1,23 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
-    public TileBase HighlightTile;
+    static public GridManager Instance;
+
     public Tilemap MainTilemap;
     public Tilemap EffectTilemap;
+
+    public TileBase HighlightTile;
+    public TileBase SelectTile;
 
     ControlManager Controls;
 
     Vector3Int PointerGridPos;
     Vector3Int HighlightedTilePos;
+    Vector3Int SelectedTilePos;
 
     public bool InBuildingMode;
     [SerializeField] private BuildingData Data;
@@ -20,33 +26,31 @@ public class GridManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+    }
+
+    private void Start()
+    {
         Controls = ControlManager.Instance;
-        PlacedTiles = new Dictionary<Vector3Int, BuildingData>();
-    }
-
-    private void OnEnable()
-    {
         Controls.OnPointerClick += Click;
-    }
 
-    private void OnDisable()
-    {
-        Controls.OnPointerClick -= Click;
+        PlacedTiles = new Dictionary<Vector3Int, BuildingData>();
     }
 
     private void Update()
     {
-        if (InBuildingMode)
-        {
-            SetPointerPosOnGrid();
+        SetPointerPosOnGrid();
+
+        if (InBuildingMode)        
+            SetSelectedTile();
+        else
             SetHighlightedTile();
-        }      
     }
 
     void Click()
     {
         if (InBuildingMode)
-            Build(Data);
+            AddBuilding(Data);
     }
 
     void SetPointerPosOnGrid()
@@ -69,13 +73,31 @@ public class GridManager : MonoBehaviour
         HighlightedTilePos = PointerGridPos;
     }
 
-    void Build(BuildingData Data)
+    void SetSelectedTile()
     {
+        if (SelectedTilePos == PointerGridPos) return;
+
+        EffectTilemap.SetTile(SelectedTilePos, null);
+
+        TileBase Tile = EffectTilemap.GetTile(PointerGridPos);
+        if (Tile != null) return;
+
+        EffectTilemap.SetTile(PointerGridPos, SelectTile);
+        SelectedTilePos = PointerGridPos;
+    }
+
+    void AddBuilding(BuildingData Data)
+    {
+        if (Data == null) return;
         if (PlacedTiles.ContainsKey(PointerGridPos)) return;
 
         PlacedTiles.Add(PointerGridPos, Data);
 
         GameObject go = Instantiate(Data.Prefab);
-        go.transform.position = MainTilemap.CellToWorld(PointerGridPos);
+        Vector3 goPos = MainTilemap.CellToWorld(PointerGridPos);
+        goPos.z = goPos.y;
+        go.transform.position = goPos;
+
+        BuildingManager.Instance.Buildings.Enqueue(Data);
     }
 }
